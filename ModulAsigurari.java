@@ -17,18 +17,34 @@ public class ModulAsigurari {
         int nrLuniRamase = sc.nextInt();
         System.out.print("Cate persoane sunt in asigurare in aceasta luna? ");
         int nrPersoaneNoi = sc.nextInt();
-        double riscuriPeOm;
-        double sumaRiscuriNoi = 0;
-        for (i = 0; i < riscuri.length; i++) {
-            riscuriPeOm = riscuri[i] / nrLuni;
-            riscuri[i] = riscuriPeOm * nrLuniRamase;
-            System.out.println("Noile riscuri sunt: " + riscuri[i] + " RON ");
-            sumaRiscuriNoi = sumaRiscuriNoi + riscuri[i];
-        }
+        riscuriNoi(riscuri, nrLuni, nrLuniRamase);
+        double sumaRiscuriNoi = sumaRiscuriNoi(riscuri, nrLuni, nrLuniRamase);
         double primaLunaraPeOm = sumaRiscuriNoi / nrLuniRamase;
         System.out.println("Prima lunara ramasa pe om este = " + primaLunaraPeOm + " RON");
         double primaLunara = nrPersoaneNoi * primaLunaraPeOm;
         System.out.println("Prima noua pentru toate persoanele din asigurare este: " + primaLunara + " RON");
+    }
+
+
+
+    public static void riscuriNoi(double[] riscuri, int nrLuni, int nrLuniRamase) {
+        double riscuriPeOm;
+        int i;
+        for (i = 0; i < riscuri.length; i++) {
+            riscuriPeOm = riscuri[i] / nrLuni;
+            riscuri[i] = riscuriPeOm * nrLuniRamase;
+            System.out.println("Noile riscuri sunt: " + riscuri[i] + " RON ");
+        }
+    }
+    public static double sumaRiscuriNoi(double[]riscuri, int nrLuni, int nrLuniRamase) {
+        double sumaRiscuriNoi = 0;
+        double riscuriPeOm;
+        for (int i = 0; i < riscuri.length; i++) {
+            riscuriPeOm = riscuri[i] / nrLuni;
+            riscuri[i] = riscuriPeOm * nrLuniRamase;
+            sumaRiscuriNoi = sumaRiscuriNoi + riscuri[i];
+        }
+        return sumaRiscuriNoi;
     }
 }
 
