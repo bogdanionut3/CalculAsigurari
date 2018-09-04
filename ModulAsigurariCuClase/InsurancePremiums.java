@@ -1,19 +1,16 @@
 package ModulAsigurariCuClase;
 
 public class InsurancePremiums {
-    private double[] risks;
-    private int numberOfMounths;
+    private Risks risks;
     private int remainingNumberOfMounths;
 
-    public InsurancePremiums(double risks[], int numberOfMounths, int remainingNumberOfMounths) {
+    public InsurancePremiums(Risks risks, int remainingNumberOfMounths) {
         this.risks = risks;
-        this.numberOfMounths = numberOfMounths;
-        this.remainingNumberOfMounths = remainingNumberOfMounths;
+        this.remainingNumberOfMounths =remainingNumberOfMounths;
     }
 
     public double calculateMounthlyPersonPrime(){
-        Risks risk = new Risks(risks, numberOfMounths,remainingNumberOfMounths);
-        double mounthlyPersonPrime = risk.calculatesSumOfNewRisks(risks,numberOfMounths,remainingNumberOfMounths)
+        double mounthlyPersonPrime = risks.calculatesSumOfNewRisks()
                 /remainingNumberOfMounths;
         return mounthlyPersonPrime;
     }

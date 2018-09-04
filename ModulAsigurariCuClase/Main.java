@@ -20,9 +20,8 @@ public class Main {
         int newNrOfPersons = sc.nextInt();
         sc.close();
         Risks risks = new Risks(risk,numberOfMounths,remainingNumberOfMounths);
-        risks.calculatesSumOfNewRisks(risk,numberOfMounths,remainingNumberOfMounths);
-        InsurancePremiums ins = new InsurancePremiums(risk,numberOfMounths,remainingNumberOfMounths);
-
+        risks.calculatesSumOfNewRisks();
+        InsurancePremiums ins = new InsurancePremiums(risks, remainingNumberOfMounths);
         System.out.print("Noile riscuri calculate in functie de perioada ramasa sunt: \n"+risks.toString());
         System.out.println("Prima calculata pentru fiecare persoana in functie de perioada ramasa este: "+ins.calculateMounthlyPersonPrime());
         System.out.println("Prima totala in functie de perioada ramasa si numarul total de persoane este: "+ins.calculateMounthlyTotaPrime(newNrOfPersons));

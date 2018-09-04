@@ -11,8 +11,7 @@ public class Risks {
         this.remainingNumberOfMounths = remainingNumberOfMounths;
     }
 
-
-    public double calculatesSumOfNewRisks(double[] risks, int numberOfMounths, int remainingNumberOfMounths) {
+    public double calculatesSumOfNewRisks(/*double[] risks, int numberOfMounths, int remainingNumberOfMounths*/) {
         double sumOfNewRisks = 0;
         double risksByPerson;
         for (int i = 0; i < risks.length; i++) {
@@ -26,10 +25,11 @@ public class Risks {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-                for(int i = 0; i<risks.length; i++){
-                    sb.append(risks[i]+"\n");
-                }
-                return sb.toString();
+        for(int i = 0; i<risks.length; i++){
+            sb.append(risks[i]+"\n");
+        }
+        return sb.toString();
     }
+
 }
 
